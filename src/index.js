@@ -2,14 +2,17 @@
 
 	var submitbutton = document.getElementById('submit');
 
-	submitbutton.addEventListener("click", function() {
+	// Travis running index.js before initpages so submit button not being found
+	if(submitbutton != null) {
+		submitbutton.addEventListener("click", function() {
 
-		var client = new githubClient(inputBox.value);
+			var client = new githubClient(inputBox.value);
 
-		var repos = client.loadJson();
+			var repos = client.loadJson();
 
-		var favourites = client.getRepos(repos);
+			var favourites = client.getRepos(repos);
 
-		console.log(favourites);
-	});
+			console.log(favourites);
+		});
+	}
 })();

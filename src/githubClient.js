@@ -29,10 +29,11 @@ githubClient.prototype.loadJson = function () {
   xmlhttp.open("GET", url, false);
   xmlhttp.send();
 
-  return JSON.parse(res);
+  return res;
 };
 
-githubClient.prototype.getRepos = function (repos) {
+githubClient.prototype.getRepos = function (res) {
+  var repos = JSON.parse(repos);
   var languageMap = {};
   var max = 0;
   // console.log(resJson);

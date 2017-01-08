@@ -36,7 +36,7 @@ githubClient.prototype.getRepos = function (repos) {
   var languageMap = {};
   var max = 0;
   // console.log(resJson);
-  Array.from(repos).forEach(function(repo) {
+  repos.forEach(function(repo) {
     var language = repo.language;
     languageMap[language] = languageMap[language] || 0;
     languageMap[language]++;

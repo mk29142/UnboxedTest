@@ -8,8 +8,8 @@ describe('githubClient', function() {
 
   describe('using gbc to extract most popular repos', function() {
 
-    var repos = [{language: "javascript"}, {language: "javascript"},
-                {language: "java"}, {language: "python"}];
+    var repos = '[{language: "javascript"}, {language: "javascript"},' +
+                '{language: "java"}, {language: "python"}]';
 
     it("should give javascript", function() {
       expect(gbc.getRepos(repos)).toEqual("javascript");

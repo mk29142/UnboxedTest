@@ -1,0 +1,25 @@
+{
+  "name": "unboxedtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk29142/UnboxedTest.git"
+  },
+  "author": "Mridul Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mk29142/UnboxedTest/issues"
+  },
+  "homepage": "https://github.com/mk29142/UnboxedTest#readme",
+  "devDependencies": {
+    "karma": "^1.3.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-requirejs": "^1.1.0"
+  }
+}

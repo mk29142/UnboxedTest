@@ -12,7 +12,7 @@ describe('githubClient', function() {
                 {language: "java"}, {language: "python"}];
 
     it("should give javascript", function() {
-      expect(gbc.getRepos(repos))[0].toEqual("javascript");
+      expect(gbc.getRepos(repos)[0]).toEqual("javascript");
     });
   });
 

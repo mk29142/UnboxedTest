@@ -23,6 +23,7 @@ githubClient.prototype.loadJson = function () {
       if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
           res = xmlhttp.responseText;
       } else if(xmlhttp.status == 404) {
+        alert("This user does not exist!");
         console.log("Error", xmlhttp.statusText);
       }
   }

@@ -1,0 +1,32 @@
+
+  .resultbox {
+    height: 50px;
+    width: 300px;
+    background-color: #A9A9A9;
+    border: 1px solid black;
+    padding-left: 4px;
+    padding-top: 4px;
+  }
+
+  .image {
+    float: left;
+  }
+
+  .testbox {
+    height: 50px;
+    width: 150px;
+    float: left;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .messagebox {
+    font-weight: lighter;
+    font-size: small;
+  }
+
+  .space {
+    float: left;
+    height: 90px;
+    width: 10px;
+  }

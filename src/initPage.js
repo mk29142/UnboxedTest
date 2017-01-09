@@ -17,7 +17,10 @@
   submitbutton.id = 'submit';
   inputBox.classList.add('submitbutton');
   submitbutton.type = 'submit';
-  submitbutton.value = "Submit";
+  submitbutton.value = 'Submit';
 	container.appendChild(submitbutton);
+
+  container.appendChild(document.createElement("br"));
+  container.appendChild(document.createElement("br"));
 
 })();

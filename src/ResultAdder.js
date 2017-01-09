@@ -5,10 +5,19 @@ function ResultAdder() {
 ResultAdder.prototype.addBox = function (user, languages) {
 
   var container = document.getElementById('container');
+
+  // clears previous search
+  var oldBox = document.getElementById('resultbox');
+  if(oldBox) {
+    oldBox.parentNode.removeChild(oldBox);
+  }
+
   var box = document.createElement('div');
+  box.id = 'resultbox';
   box.classList.add('resultbox');
   container.appendChild(box);
 
+  //creates new image for html / css test
   var image = new Image(40,40);
   image.className = 'image';
 
@@ -17,7 +26,7 @@ ResultAdder.prototype.addBox = function (user, languages) {
   if(firstLanguage == 'Java') {
     image.src = '/images/java.png';
     image.alt = "Java";
-  } else if (firstLanguage == 'Javascript') {
+  } else if (firstLanguage == 'JavaScript') {
     image.src = '/images/javascript.png';
     image.alt = 'Javascript';
   } else if (firstLanguage == 'Haskell') {
@@ -31,19 +40,23 @@ ResultAdder.prototype.addBox = function (user, languages) {
     image.alt = 'other';
   }
 
+  // seperates image and userBox
   var vSpace = document.createElement('div');
   vSpace.classList.add('space');
 
-  var testbox = document.createElement('div');
-  testbox.classList.add('testbox');
-  testbox.innerHTML = user;
-  testbox.appendChild(document.createElement("br"));
+  var userBox = document.createElement('div');
+  userBox.classList.add('userBox');
+  userBox.innerHTML = user;
+  userBox.appendChild(document.createElement("br"));
 
   var message = 'My favourite ';
   var numLang = languages.length;
+
   if(numLang == 1) {
+    // For when you only have 1 favourite langauge
     message += 'language is ' + languages[0] + '!';
   } else {
+    // For when you have multiple favourite languages
     message += 'languages are ';
     for(var i = 0; i < numLang; i++) {
       if(i != numLang - 1) {
@@ -53,14 +66,14 @@ ResultAdder.prototype.addBox = function (user, languages) {
       }
     }
   }
+  
   var messageBox = document.createElement('div');
   messageBox.classList.add('messagebox');
   messageBox.appendChild(document.createTextNode(message));
-  testbox.appendChild(messageBox);
-
+  userBox.appendChild(messageBox);
 
   box.appendChild(image);
   box.appendChild(vSpace);
-  box.appendChild(testbox);
+  box.appendChild(userBox);
 
 };

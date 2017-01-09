@@ -40,15 +40,31 @@ ResultAdder.prototype.addBox = function (user, languages) {
     image.alt = 'other';
   }
 
+  var message = this._createMessage(languages);
+
   // seperates image and userBox
   var vSpace = document.createElement('div');
   vSpace.classList.add('space');
 
+  // adds username 
   var userBox = document.createElement('div');
   userBox.classList.add('userBox');
   userBox.innerHTML = user;
   userBox.appendChild(document.createElement("br"));
 
+  // adds messages
+  var messageBox = document.createElement('div');
+  messageBox.classList.add('messagebox');
+  messageBox.appendChild(document.createTextNode(message));
+  userBox.appendChild(messageBox);
+
+  box.appendChild(image);
+  box.appendChild(vSpace);
+  box.appendChild(userBox);
+
+};
+
+ResultAdder.prototype._createMessage = function (languages) {
   var message = 'My favourite ';
   var numLang = languages.length;
 
@@ -66,14 +82,5 @@ ResultAdder.prototype.addBox = function (user, languages) {
       }
     }
   }
-  
-  var messageBox = document.createElement('div');
-  messageBox.classList.add('messagebox');
-  messageBox.appendChild(document.createTextNode(message));
-  userBox.appendChild(messageBox);
-
-  box.appendChild(image);
-  box.appendChild(vSpace);
-  box.appendChild(userBox);
-
+  return message;
 };

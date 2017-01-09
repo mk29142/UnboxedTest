@@ -1,10 +1,5 @@
 function githubClient(userName) {
   this.userName = userName;
-
-  // var repos = this.loadJson();
-  //
-  // var favourites = this.getRepos(repos);
-
 };
 
 githubClient.prototype.loadJson = function () {
@@ -36,7 +31,7 @@ githubClient.prototype.loadJson = function () {
 githubClient.prototype.getRepos = function (repos) {
   var languageMap = {};
   var max = 0;
-  // console.log(resJson);
+
   repos.forEach(function(repo) {
     var language = repo.language;
     languageMap[language] = languageMap[language] || 0;

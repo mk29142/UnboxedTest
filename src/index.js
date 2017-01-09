@@ -17,7 +17,6 @@
 
 			adder.addBox(userName, favourites);
 
-			console.log(favourites);
 		});
 	}
 })();
